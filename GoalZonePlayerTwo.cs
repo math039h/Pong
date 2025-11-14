@@ -1,16 +1,13 @@
-using System.Threading.Tasks;
 using Godot;
 
 namespace Pong;
 
 public partial class GoalZonePlayerTwo : Area2D
 {
-	private int PlayerOneScore { get; set; } = 0;
 	private Label _playerOneScore;
 	private Ball _ball;
 	private Staller _staller;
-	private Vector2 _startPosition = new(576, 320);
-	private Vector2 _startVelocity = new(-300, 50);
+	private Goal _goal = new();
 
 	public override void _Ready()
 	{
@@ -25,15 +22,7 @@ public partial class GoalZonePlayerTwo : Area2D
 	{
 		if (node2D is RigidBody2D)
 		{
-			Goal.Update("two", _playerOneScore);
-			_ball.LinearVelocity = Vector2.Zero;
-			_ball.Teleport(_startPosition);
-			_ball.Freeze = true;
-			_staller.Stall(2, () =>
-			{
-				_ball.Freeze = false;
-				_ball.SetVelocity(_startVelocity);
-			});
+			_goal.Scored("two",  _playerOneScore, _ball, _staller);
 		}
 	}
 }

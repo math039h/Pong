@@ -8,31 +8,19 @@ public partial class Ball : RigidBody2D
 	private bool _shouldSetVelocity = false;
 	private Vector2 _targetPosition;
 	private Vector2 _targetVelocity;
-	private Ball _ball;
+	private Vector2 _startPosition = new(576, 320);
+	private Vector2 _startVelocity = new(-300, 50);
 
-	public override void _Ready()
+	public void Teleport()
 	{
-		var _ball = GetNode<Ball>("root/Node2D/RigidBody2D");
-	}
-
-	public void Teleport(Vector2 position)
-	{
-		_targetPosition = position;
+		_targetPosition = _startPosition;
 		_shouldTeleport = true;
 	}
 	
-	public void SetVelocity(Vector2 velocity)
+	public void SetVelocity()
 	{
-		_targetVelocity = velocity;
+		_targetVelocity = _startVelocity;
 		_shouldSetVelocity = true;
-	}
-	
-	public void TeleportAndSetVelocity(Vector2 position, Vector2 velocity)
-	{
-		_targetPosition = position;
-		_targetVelocity = velocity;
-		_shouldSetVelocity = true;
-		_shouldTeleport = true;
 	}
 
 	public override void _IntegrateForces(PhysicsDirectBodyState2D state)

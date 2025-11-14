@@ -4,12 +4,10 @@ namespace Pong;
 
 public partial class GoalZonePlayerOne : Area2D
 {
-	private int PlayerTwoScore { get; set; } = 0;
 	private Label _playerTwoScore;
 	private Ball _ball;
 	private Staller _staller;
-	private Vector2 _startPosition = new(576, 320);
-	private Vector2 _startVelocity = new(-300, 50);
+	private Goal _goal = new();
 
 	public override void _Ready()
 	{
@@ -24,15 +22,7 @@ public partial class GoalZonePlayerOne : Area2D
 	{
 		if (node2D is RigidBody2D)
 		{
-			Goal.Update("one", _playerTwoScore);
-			_ball.LinearVelocity = Vector2.Zero;
-			_ball.Teleport(_startPosition);
-			_ball.Freeze = true;
-			_staller.Stall(2, () =>
-			{
-				_ball.Freeze = false;
-				_ball.SetVelocity(_startVelocity);
-			});
+			_goal.Scored("one",  _playerTwoScore, _ball, _staller);
 		}
 	}
 }
