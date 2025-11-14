@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="221c0e60-a741-43ea-8365-11033bdecf53" name="Changes" comment="" />
+    <list default="true" id="221c0e60-a741-43ea-8365-11033bdecf53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Goal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Staller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pong/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ball.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoalZonePlayerOne.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GoalZonePlayerOne.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainScene.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/MainScene.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/BackGround30X15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/BackGround30X15.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/Board.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/Board.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/Boarder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/Boarder.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/BoarderNew.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/BoarderNew.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/BoarderPixel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/BoarderPixel.png.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/Wall.png" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/Wall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/Wall.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/Wall.png.import" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +32,13 @@
   <component name="DpaMonitoringSettings">
     <option name="firstShow" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1c378f459c054fecaf4484a0fa6d44c055a800/27/d334db24/CharacterBody2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Goal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Staller.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -29,6 +53,8 @@
     ".NET Executable.Player.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,6 +120,9 @@
       <updated>1762093141186</updated>
       <workItem from="1762093142391" duration="5957000" />
       <workItem from="1762535278132" duration="15354000" />
+      <workItem from="1762956517014" duration="1117000" />
+      <workItem from="1763063086492" duration="12482000" />
+      <workItem from="1763152208412" duration="3195000" />
     </task>
     <servers />
   </component>

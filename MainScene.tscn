@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4l2t7r2wmvm8"]
+[gd_scene load_steps=19 format=3 uid="uid://b4l2t7r2wmvm8"]
 
 [ext_resource type="Texture2D" uid="uid://3wnlnpwt6snx" path="res://Textures/BackGround.png" id="2_rf2cd"]
 [ext_resource type="Texture2D" uid="uid://bf44dwfxicoje" path="res://Textures/Bat.png" id="3_a814b"]
 [ext_resource type="Script" uid="uid://berd3xejdqflm" path="res://CharacterBody2d.cs" id="3_rf2cd"]
 [ext_resource type="Script" uid="uid://cftlgr2l8vbcy" path="res://Sprite2d.cs" id="4_5crlr"]
 [ext_resource type="Script" uid="uid://4njl81uk0g2l" path="res://GoalZonePlayerOne.cs" id="5_torvr"]
+[ext_resource type="Script" uid="uid://cxctdjhal4qq0" path="res://GoalZonePlayerTwo.cs" id="6_8xkvn"]
 [ext_resource type="Texture2D" uid="uid://npf51wdiuq40" path="res://Textures/Ball.png" id="7_hbc2u"]
 [ext_resource type="Script" uid="uid://chppyw8qwjnxq" path="res://Ball.cs" id="7_torvr"]
 [ext_resource type="Texture2D" uid="uid://cpjxhsgy4pl0v" path="res://Textures/FloorOrCeiling.png" id="8_hbc2u"]
+[ext_resource type="Texture2D" uid="uid://bgwpdeljqww0a" path="res://Textures/Wall.png" id="9_torvr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hbc2u"]
 radius = 3.0
@@ -25,19 +27,22 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5x2j"]
-radius = 11.313708
+radius = 12.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_torvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xkvn"]
 size = Vector2(1136, 5.828125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5x2j"]
+size = Vector2(16, 648)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = 16.0
+offset_left = 8.0
 offset_top = 16.0
-offset_right = 891.0017
+offset_right = 883.0017
 offset_bottom = 455.99985
 scale = Vector2(1.2799976, 1.4000006)
 texture = ExtResource("2_rf2cd")
@@ -85,10 +90,10 @@ script = ExtResource("5_torvr")
 shape = SubResource("RectangleShape2D_torvr")
 
 [node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(1099, -1)
+position = Vector2(1136, 324)
+script = ExtResource("6_8xkvn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(26, 324.5)
 shape = SubResource("RectangleShape2D_torvr")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
@@ -99,7 +104,6 @@ physics_material_override = SubResource("PhysicsMaterial_8xkvn")
 gravity_scale = 0.0
 linear_velocity = Vector2(-300, 0)
 linear_damp_mode = 1
-angular_damp_mode = 1
 script = ExtResource("7_torvr")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
@@ -117,8 +121,8 @@ collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_torvr")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-5.429983e-05, 15.999999)
-scale = Vector2(37.866665, 3.2)
+position = Vector2(2.0712614e-05, 13.000001)
+scale = Vector2(38.4, 8.666665)
 texture = ExtResource("8_hbc2u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -132,13 +136,55 @@ collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_torvr")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(-5.429983e-05, 15.999999)
-scale = Vector2(37.866665, 3.2)
+position = Vector2(3.9100647e-05, 26.999983)
+scale = Vector2(38.399998, 10.4)
 texture = ExtResource("8_hbc2u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(1, 14.0859375)
 shape = SubResource("RectangleShape2D_8xkvn")
 
-[connection signal="body_entered" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="RigidBody2D" to="Area2D/CollisionShape2D" method="_on_rigid_body_2d_body_entered"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(8, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(-4.172325e-06, 7.390976e-06)
+scale = Vector2(7.9999995, 43.199997)
+texture = ExtResource("9_torvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_p5x2j")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(1144, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(-4.172325e-06, 7.390976e-06)
+scale = Vector2(7.9999995, 43.199997)
+texture = ExtResource("9_torvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_p5x2j")
+
+[node name="PlayerOneScore" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 128.0
+theme_type_variation = &"HeaderLarge"
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerTwoScore" type="Label" parent="."]
+offset_left = 896.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 128.0
+theme_type_variation = &"HeaderLarge"
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="OnGoalEntered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="OnGoalEntered"]

@@ -4,30 +4,48 @@ namespace Pong;
 
 public partial class Ball : RigidBody2D
 {
+	private bool _shouldTeleport = false;
+	private bool _shouldSetVelocity = false;
+	private Vector2 _targetPosition;
+	private Vector2 _targetVelocity;
+	private Ball _ball;
 
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		var area = GetNode<Area2D>("Area2D");
-		area.BodyEntered += DoSomething;
-		if (area.HasMethod("_on_area_2d_body_entered"))
-		{
-			//area.Trigger
-		}
+		var _ball = GetNode<Ball>("root/Node2D/RigidBody2D");
 	}
 
-	private void DoSomething(Node2D node)
+	public void Teleport(Vector2 position)
 	{
-		QueueFree();
-		if (node is RigidBody2D)
-		{
-			GD.Print("Deleting object!");
-			QueueFree();
-		}
+		_targetPosition = position;
+		_shouldTeleport = true;
 	}
 	
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public void SetVelocity(Vector2 velocity)
 	{
+		_targetVelocity = velocity;
+		_shouldSetVelocity = true;
+	}
+	
+	public void TeleportAndSetVelocity(Vector2 position, Vector2 velocity)
+	{
+		_targetPosition = position;
+		_targetVelocity = velocity;
+		_shouldSetVelocity = true;
+		_shouldTeleport = true;
+	}
+
+	public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+	{
+		if (_shouldTeleport)
+		{
+			state.Transform = new Transform2D(state.Transform.Rotation, _targetPosition);
+			_shouldTeleport = false;
+		}
+		if (_shouldSetVelocity)
+		{
+			state.LinearVelocity = _targetVelocity;
+			_shouldSetVelocity = false;
+		}
 	}
 }
