@@ -2,12 +2,11 @@ using Godot;
 
 namespace Pong;
 
-public partial class PlayAgainButton : Button
+public partial class PlayButton : Button
 {
-
 	private void OnPressed()
 	{
-		GD.Print("PlayAgainButton pressed! Loading scene...");
+		GD.Print("PlayButton pressed! Loading scene...");
 		GetTree().ChangeSceneToFile("res://MainScene.tscn");
 	}
 }
