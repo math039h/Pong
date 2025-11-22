@@ -13,7 +13,7 @@ public partial class GoalZonePlayerTwo : Area2D
 
 	public override void _Ready()
 	{
-		_playAgainButton = GetNode<PlayAgainButton>("/root/CanvasLayer/Control/Button");
+		_playAgainButton = GetNode<PlayAgainButton>("/root/Node2D/CanvasLayer/Control/Button");
 		_playerOneScore = GetNode<Label>("/root/Node2D/PlayerOneScore");
 		_ball = GetNode<Ball>("/root/Node2D/RigidBody2D");
 		_winnerLabel = GetNode<Label>("/root/Node2D/WinnerLabel");
