@@ -39,12 +39,16 @@ public partial class Goal : Area2D
             IsGameOver = true;
             winnerLabel.Text = "Player 1 won!";
             playAgainButton.Show();
+            PlayerOneScore = 0;
+            PlayerTwoScore = 0;
         }
         else if (PlayerTwoScore == 3)
         {
             IsGameOver = true;
             winnerLabel.Text = "Player 2 won!";
             playAgainButton.Show();
+            PlayerOneScore = 0;
+            PlayerTwoScore = 0;
         }
     }
 
