@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4l2t7r2wmvm8"]
+[gd_scene load_steps=21 format=3 uid="uid://b4l2t7r2wmvm8"]
 
 [ext_resource type="Texture2D" uid="uid://3wnlnpwt6snx" path="res://Textures/BackGround.png" id="2_rf2cd"]
+[ext_resource type="Script" uid="uid://berd3xejdqflm" path="res://PlayerOneBat.cs" id="2_yvb8b"]
 [ext_resource type="Texture2D" uid="uid://bf44dwfxicoje" path="res://Textures/Bat.png" id="3_a814b"]
-[ext_resource type="Script" uid="uid://berd3xejdqflm" path="res://CharacterBody2d.cs" id="3_rf2cd"]
 [ext_resource type="Script" uid="uid://cftlgr2l8vbcy" path="res://Sprite2d.cs" id="4_5crlr"]
 [ext_resource type="Script" uid="uid://4njl81uk0g2l" path="res://GoalZonePlayerOne.cs" id="5_torvr"]
+[ext_resource type="Script" uid="uid://dkpvb4nu6w713" path="res://PlayerTwoBat.cs" id="5_yvb8b"]
 [ext_resource type="Script" uid="uid://cxctdjhal4qq0" path="res://GoalZonePlayerTwo.cs" id="6_8xkvn"]
 [ext_resource type="Texture2D" uid="uid://npf51wdiuq40" path="res://Textures/Ball.png" id="7_hbc2u"]
 [ext_resource type="Script" uid="uid://chppyw8qwjnxq" path="res://Ball.cs" id="7_torvr"]
@@ -53,7 +54,7 @@ position = Vector2(64, 320)
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
-script = ExtResource("3_rf2cd")
+script = ExtResource("2_yvb8b")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-1, 0)
@@ -70,7 +71,7 @@ position = Vector2(1088, 320)
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
-script = ExtResource("3_rf2cd")
+script = ExtResource("5_yvb8b")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
 position = Vector2(-1, 0)

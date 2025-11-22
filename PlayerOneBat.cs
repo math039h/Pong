@@ -2,7 +2,7 @@ using Godot;
 
 namespace Pong;
 
-public partial class CharacterBody2d : CharacterBody2D
+public partial class PlayerOneBat : CharacterBody2D
 {
 	private const float Speed = 300.0f;
 	private const float PushForce = 300;
